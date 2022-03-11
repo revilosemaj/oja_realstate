@@ -1,4 +1,5 @@
-import { Menu, MenuButton, MenuList, MenuItem, IconButton, Box, Flex, Spacer, Link } from '@chakra-ui/react';
+import Link from 'next/link';
+import { Menu, MenuButton, MenuList, MenuItem, IconButton, Box, Flex, Spacer } from '@chakra-ui/react';
 import { FcMenu, FcHome, FcAbout } from 'react-icons/fc';
 import { BsSearch } from 'react-icons/bs';
 import { FiKey } from 'react-icons/fi'
