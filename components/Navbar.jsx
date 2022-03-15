@@ -8,7 +8,7 @@ const Navbar = () => (
     <>
         <Flex p={2} borderBottom="1px" borderColor="gray.100">
             <Box color='blue.400' fontWeight="bold" fontSize="3xl">
-                Realtor
+                <Link href="/">Realtor</Link>
             </Box>
             <Spacer />
             <Box>
@@ -20,26 +20,18 @@ const Navbar = () => (
                         variant='outline'
                     />
                     <MenuList>
-                        <MenuItem icon={<FcHome /> }>
-                            <Link href='/' passHref>
-                            Home
-                            </Link>
-                        </MenuItem>
-                        <MenuItem icon={<BsSearch/>}>
-                            <Link href='/search' passHref>
-                            Search
-                            </Link>
-                        </MenuItem>
-                        <MenuItem icon={<FcAbout />}>
-                            <Link href='/search?purpose=for-sale' passHref>
-                             Buy Property
-                            </Link>
-                        </MenuItem>
-                        <MenuItem icon={<FiKey />}>
-                            <Link href='/search?purpose=for-rent' passHref>
-                            Rent Property
-                            </Link>
-                        </MenuItem>
+                        <Link href='/' passHref>
+                            <MenuItem icon={<FcHome /> }>Home</MenuItem>
+                        </Link>
+                        <Link href='/search' passHref>
+                            <MenuItem icon={<BsSearch/>}>Search</MenuItem>
+                        </Link>
+                        <Link href='/search?purpose=for-sale' passHref>
+                            <MenuItem icon={<FcAbout />}>Buy Property</MenuItem>
+                        </Link>
+                        <Link href='/search?purpose=for-rent' passHref>
+                            <MenuItem icon={<FiKey />}>Rent Property</MenuItem>
+                        </Link>
                     </MenuList>
                 </Menu>
             </Box>

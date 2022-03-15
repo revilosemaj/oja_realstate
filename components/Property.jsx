@@ -15,8 +15,8 @@ const Property = ({ property : { isVerified, price, rentFrequency, coverPhoto, r
                 <Box>
                     <Image 
                         src={coverPhoto ? coverPhoto.url : DefaultHouse }
-                        height="200px"
-                        width={350}
+                        height="220px"
+                        width={400}
                         alt="house"
                     />
                 </Box>
