@@ -1,8 +1,22 @@
-import { Flex, Box, Menu, MenuButton, MenuList, MenuItem, Select } from "@chakra-ui/react"
-import { ChevronDownIcon } from "@chakra-ui/icons"
+import { Flex, Box, Select } from "@chakra-ui/react"
 import { filterData } from "../utils/filterData"
+import { useRouter } from "next/router"
 
 const SearchFilter = () => {
+    const router = useRouter();
+
+    const onChangeHandler = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        let query = router.query;
+        const pathname = router.pathname;
+        
+        query[name] = value
+
+        router.push({ pathname, query });
+        
+    }
+
         return (
             <Flex flexWrap="wrap" justifyContent="center" alignItems="center">
             {
@@ -15,7 +29,7 @@ const SearchFilter = () => {
                         borderRadius="5px"
                         _hover={ { borderColor : "gray"}}
                         >
-                        <Select  placeholder={placeholder}>
+                        <Select  placeholder={placeholder} name={queryName} onChange={onChangeHandler}>
                         {
                             items.map(({ name, value }) => (
                                 <option key={name} value={value}>{name}</option>
